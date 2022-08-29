@@ -70,6 +70,7 @@ class QuestionView extends Component {
       url: `http://127.0.0.1:5000/categories/${id}/questions`, //TODO: update request URL
       type: 'GET',
       success: (result) => {
+        // console.log(result)
         this.setState({
           questions: result.questions,
           totalQuestions: result.total_questions,
@@ -161,6 +162,7 @@ class QuestionView extends Component {
         <div className='questions-list'>
           <h2>Questions</h2>
           {this.state.questions.map((q) => (
+            // console.log(q.category)
             <Question
               key={q.id}
               question={q.question}
